@@ -9,7 +9,7 @@ export default function AddParticipants() {
 
   return (
     <View style={styles.container}>
-      <ParticipantList participants={participants}/>
+      <ParticipantList participants={participants} setParticipants={setParticipants}/>
       <ParticipantForm participants={participants} setParticipants={setParticipants}/>
     </View>
   );
