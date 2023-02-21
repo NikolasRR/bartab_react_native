@@ -1,8 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+
+import { openDatabase } from "react-native-sqlite-storage";
+// import db from "./../../database/db";
 
 export default function ParticipantForm({ participants, setParticipants }) {
   const [participantName, setParticipantName] = useState("");
+
+
+  const db = openDatabase({ name: 'UserDatabase.db' });
+
+  // const prepareSQLStatement = () => {
+  //   let statement = "";
+  //   participants.forEach(participant => { statement += `INSERT INTO ` });
+  // }
+
+  // useEffect(() => {
+  //   db.transaction(function (txn) {
+  //     txn.executeSql(
+  //       ''
+  //     );
+  //   })
+  // }, []);
 
   return (
     <View style={styles.container}>
@@ -14,9 +33,9 @@ export default function ParticipantForm({ participants, setParticipants }) {
           placeholder="participant name"
         ></TextInput>
         <TouchableOpacity style={styles.addButton} onPress={() => {
-            setParticipants([...participants, participantName]);
-            setParticipantName("");
-          }}>
+          setParticipants([...participants, participantName]);
+          setParticipantName("");
+        }}>
           <Text style={styles.addButtonText}>add</Text>
         </TouchableOpacity>
       </View>
