@@ -1,14 +1,10 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
-import { openDatabase } from "react-native-sqlite-storage";
 // import db from "./../../database/db";
 
-export default function ParticipantForm({ participants, setParticipants }) {
+export default function ParticipantForm({ participants, setParticipants, navigation }) {
   const [participantName, setParticipantName] = useState("");
-
-
-  const db = openDatabase({ name: 'UserDatabase.db' });
 
   // const prepareSQLStatement = () => {
   //   let statement = "";
@@ -39,7 +35,11 @@ export default function ParticipantForm({ participants, setParticipants }) {
           <Text style={styles.addButtonText}>add</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.continueButton}>
+      <TouchableOpacity
+        disabled={participants.length <= 1}
+        style={styles.continueButton}
+        onPress={() => navigation.navigate("AddItems", { participants: participants })}
+      >
         <Text style={styles.continueButtonText}>continue</Text>
       </TouchableOpacity>
     </View>

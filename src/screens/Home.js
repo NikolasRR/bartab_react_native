@@ -1,8 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
-
-// import db from "./../../database/db";
 
 export default function Home({ navigation }) {
   // useEffect(() => {
@@ -35,7 +32,7 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#EEE8AA',
     alignItems: 'center',
     justifyContent: 'center',
   },
