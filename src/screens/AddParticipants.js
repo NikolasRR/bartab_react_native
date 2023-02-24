@@ -17,6 +17,7 @@ export default function AddParticipants({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#EEE8AA',
     flex: 1,
     justifyContent: 'flex-end'
   }

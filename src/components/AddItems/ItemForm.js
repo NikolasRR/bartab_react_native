@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+
 import ParticipantSelection from "./ParticipantSelection";
 
 export default function ItemForm({ participants }) {
+  const [selectedParticipants, setSelectedParticipants] = useState([]);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [amount, setAmount] = useState("");
+
   return (
     <View style={styles.container}>
       <View style={styles.inputs}>
@@ -12,7 +19,7 @@ export default function ItemForm({ participants }) {
           <Text style={styles.addButtonText}>add</Text>
         </TouchableOpacity>
       </View>
-      <ParticipantSelection participants={participants} />
+      <ParticipantSelection participants={participants} selectedParticipants={selectedParticipants} setSelectedParticipants={setSelectedParticipants}/>
       <TouchableOpacity style={styles.continueButton}>
           <Text style={styles.continueButtonText}>continue</Text>
         </TouchableOpacity>
