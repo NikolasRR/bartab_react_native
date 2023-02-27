@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { StyleSheet, Switch, Text, View } from "react-native";
 
-export default function ParticipantSwitch({ name, index, selectedParticipants, setSelectedParticipants }) {
-  const [selected, setSelected] = useState(false);
+export default function ParticipantSwitch({ state, name, index, selectedParticipants, setSelectedParticipants }) {
+  const [selected, setSelected] = useState(state);
 
   const updateParticipants = (index) => {
     let temp = [...selectedParticipants];
-    temp.splice(index, 1);
+    const tal = temp.splice(index, 1);
     setSelectedParticipants([...temp]);
   };
 

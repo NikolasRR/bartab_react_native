@@ -29,7 +29,7 @@ export default function ParticipantForm({ participants, setParticipants, navigat
           placeholder="participant name"
         ></TextInput>
         <TouchableOpacity style={styles.addButton} onPress={() => {
-          setParticipants([...participants, participantName]);
+          setParticipants([participantName, ...participants]);
           setParticipantName("");
         }}>
           <Text style={styles.addButtonText}>add</Text>

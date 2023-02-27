@@ -1,28 +1,46 @@
 import { useState } from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 import ParticipantSelection from "./ParticipantSelection";
 
-export default function ItemForm({ participants }) {
+export default function ItemForm({ participants, items, setItems }) {
   const [selectedParticipants, setSelectedParticipants] = useState([]);
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [amount, setAmount] = useState("");
 
+  const addItem = () => {
+    if (name === "" || price === "" || amount === "" || selectedParticipants.length < 1) {
+      Alert.alert('check fields');
+      return;
+    }
+    const item = {
+      name: name,
+      amount: parseInt(amount),
+      price: parseFloat(price),
+      participants: selectedParticipants
+    };
+    setItems([item, ...items]);
+    setName("");
+    setAmount("");
+    setPrice("");
+    setSelectedParticipants([]);
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.inputs}>
-        <TextInput style={inputStyles(3, 3).input} placeholder="name"></TextInput>
-        <TextInput style={inputStyles(1, 3).input} placeholder="price" keyboardType="number-pad"></TextInput>
-        <TextInput style={inputStyles(1, 0).input} placeholder="amount" keyboardType="decimal-pad"></TextInput>
-        <TouchableOpacity style={styles.addButton}>
-          <Text style={styles.addButtonText}>add</Text>
-        </TouchableOpacity>
+        <TextInput value={name} onChangeText={setName} style={inputStyles(3, 3).input} placeholder="name"></TextInput>
+        <TextInput value={price} onChangeText={setPrice} style={inputStyles(1, 3).input} placeholder="price" keyboardType="numeric"></TextInput>
+        <TextInput value={amount} onChangeText={setAmount} style={inputStyles(1, 3).input} placeholder="amount" keyboardType="numeric"></TextInput>
+        <ParticipantSelection participants={participants} selectedParticipants={selectedParticipants} setSelectedParticipants={setSelectedParticipants} />
       </View>
-      <ParticipantSelection participants={participants} selectedParticipants={selectedParticipants} setSelectedParticipants={setSelectedParticipants}/>
+      <TouchableOpacity style={styles.addButton} onPress={() => addItem()}>
+        <Text style={styles.addButtonText}>add</Text>
+      </TouchableOpacity>
       <TouchableOpacity style={styles.continueButton}>
-          <Text style={styles.continueButtonText}>continue</Text>
-        </TouchableOpacity>
+        <Text style={styles.continueButtonText}>continue</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -34,10 +52,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   addButton: {
-    flex: 1,
     backgroundColor: 'rgb(139,69,19)',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    height: 60
   },
   addButtonText: {
     color: 'rgb(255,215,0)',

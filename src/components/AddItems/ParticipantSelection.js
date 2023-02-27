@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Modal, ScrollView, StyleSheet, Switch, Text, TouchableOpacity, View } from "react-native";
+import { Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
+
 import ParticipantSwitch from "./ParticipantSwitch";
 
 export default function ParticipantSelection({ participants, selectedParticipants, setSelectedParticipants }) {
@@ -8,10 +10,9 @@ export default function ParticipantSelection({ participants, selectedParticipant
   return (
     <View style={styles.mainContainer}>
       <TouchableOpacity style={styles.openModalButton} onPress={() => setModelOpen(true)}>
-        <Text style={styles.openModalButtonText}>{selectedParticipants.length === 0 ? "select participants" : 'selected'}</Text>
+        <Ionicons name={selectedParticipants.length === 0 ? "people-sharp" : "ios-checkmark-sharp"} size={24} color="rgb(255,215,0)" />
       </TouchableOpacity>
       <Modal
-        style={styles.modal}
         animationType="slide"
         visible={modelOpen}
         transparent={true}
@@ -20,9 +21,10 @@ export default function ParticipantSelection({ participants, selectedParticipant
           <View style={styles.modalView}>
             <ScrollView>
               {participants.map((participant, i) => <ParticipantSwitch
+                state={selectedParticipants.find(p => p === participant) !== undefined}
                 key={i}
                 name={participant}
-                index={i}
+                index={selectedParticipants.findIndex(p => p === participant)}
                 selectedParticipants={selectedParticipants}
                 setSelectedParticipants={setSelectedParticipants}
               />)}
@@ -39,13 +41,14 @@ export default function ParticipantSelection({ participants, selectedParticipant
 
 const styles = StyleSheet.create({
   mainContainer: {
-    height: 40
+    height: 40,
+    flex: 1
   },
   openModalButton: {
     backgroundColor: '#D2691E',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 40
+    height: 60
   },
   openModalButtonText: {
     color: '#EEE8AA',
