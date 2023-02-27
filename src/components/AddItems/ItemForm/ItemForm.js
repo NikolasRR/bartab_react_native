@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 
-import ParticipantSelection from "./ParticipantSelection";
+import ParticipantSelection from "../ParticipantSelection";
+import styles, { inputStyles } from "./styles";
 
 export default function ItemForm({ participants, items, setItems }) {
   const [selectedParticipants, setSelectedParticipants] = useState([]);
@@ -14,17 +15,21 @@ export default function ItemForm({ participants, items, setItems }) {
       Alert.alert('check fields');
       return;
     }
-    const item = {
-      name: name,
-      amount: parseInt(amount),
-      price: parseFloat(price),
-      participants: selectedParticipants
-    };
-    setItems([item, ...items]);
-    setName("");
-    setAmount("");
-    setPrice("");
-    setSelectedParticipants([]);
+    try {
+      const item = {
+        name: name,
+        amount: parseInt(amount),
+        price: parseFloat(price).toFixed(2),
+        participants: selectedParticipants
+      };
+      setItems([item, ...items]);
+      setName("");
+      setAmount("");
+      setPrice("");
+      setSelectedParticipants([]);
+    } catch (error) {
+      Alert.alert('check fields');
+    }
   }
 
   return (
@@ -44,42 +49,3 @@ export default function ItemForm({ participants, items, setItems }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-  },
-  inputs: {
-    flexDirection: 'row'
-  },
-  addButton: {
-    backgroundColor: 'rgb(139,69,19)',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 60
-  },
-  addButtonText: {
-    color: 'rgb(255,215,0)',
-    fontSize: 25
-  },
-  continueButton: {
-    height: 60,
-    backgroundColor: 'rgb(255,215,0)',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  continueButtonText: {
-    color: 'rgb(139,69,19)',
-    fontSize: 25,
-    fontWeight: '600'
-  }
-})
-
-const inputStyles = (flex, margin) => StyleSheet.create({
-  input: {
-    backgroundColor: 'white',
-    flex: flex,
-    paddingLeft: 5,
-    marginRight: margin,
-    height: 60
-  }
-})

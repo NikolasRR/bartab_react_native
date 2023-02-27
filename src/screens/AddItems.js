@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 
-import ItemForm from "../components/AddItems/ItemForm";
+import ItemForm from "../components/AddItems/ItemForm/ItemForm";
 import ItemList from "../components/AddItems/ItemsList/ItemsList";
 
 export default function AddItems({ navigation, route }) {
