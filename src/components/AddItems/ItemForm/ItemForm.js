@@ -4,7 +4,7 @@ import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 import ParticipantSelection from "../ParticipantSelection";
 import styles, { inputStyles } from "./styles";
 
-export default function ItemForm({ participants, items, setItems }) {
+export default function ItemForm({ participants, items, setItems, navigation }) {
   const [selectedParticipants, setSelectedParticipants] = useState([]);
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -43,7 +43,7 @@ export default function ItemForm({ participants, items, setItems }) {
       <TouchableOpacity style={styles.addButton} onPress={() => addItem()}>
         <Text style={styles.addButtonText}>add</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.continueButton}>
+      <TouchableOpacity style={styles.continueButton} onPress={() => navigation.navigate("TabDisplay", { items: items })}>
         <Text style={styles.continueButtonText}>continue</Text>
       </TouchableOpacity>
     </View>

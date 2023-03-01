@@ -16,7 +16,7 @@ export default function ItemList({ items, setItems }) {
       <ScrollView contentContainerStyle={styles.scroll}>
         {items.map((item, index) => {
           return (
-            <ItemBox item={item} i={index} updateItems={updateItems} />
+            <ItemBox item={item} i={index} key={index} updateItems={updateItems} />
           );
         })}
       </ScrollView>

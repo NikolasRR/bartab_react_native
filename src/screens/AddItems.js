@@ -10,7 +10,7 @@ export default function AddItems({ navigation, route }) {
   return (
     <View style={styles.container}>
       <ItemList items={items} setItems={setItems} />
-      <ItemForm participants={route.params.participants} items={items} setItems={setItems}/>
+      <ItemForm participants={route.params.participants} items={items} setItems={setItems} navigation={navigation}/>
     </View>
   );
 }
