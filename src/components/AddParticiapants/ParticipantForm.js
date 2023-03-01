@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 // import db from "./../../database/db";
 
@@ -29,6 +29,10 @@ export default function ParticipantForm({ participants, setParticipants, navigat
           placeholder="participant name"
         ></TextInput>
         <TouchableOpacity style={styles.addButton} onPress={() => {
+          if (participants.find(p => p === participantName)) {
+            Alert.alert('repeated names not allowed');
+            return;
+          }
           setParticipants([participantName, ...participants]);
           setParticipantName("");
         }}>

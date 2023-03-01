@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import IndividualTab from "../components/TabDisplay/IndividualTab/IndividualTab";
 
 export default function TabDisplay({ route }) {
@@ -24,9 +24,15 @@ export default function TabDisplay({ route }) {
   tabs.forEach((value, key) => individualTabs.push({name: key, items: value}))
 
   return (
-    <View>
-      
+    <View style={styles.container}>
       {individualTabs.map((participant, i) => <IndividualTab key={i} participant={participant.name} items={participant.items} />)}
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#EEE8AA',
+    flex: 1,
+  }
+})
