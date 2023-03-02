@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import IndividualTab from "../components/TabDisplay/IndividualTab/IndividualTab";
 
-export default function TabDisplay({ route }) {
+export default function TabDisplay({ navigation, route }) {
   const items = route.params.items;
   let tabs = new Map;
   items.forEach(item => {
@@ -25,7 +25,12 @@ export default function TabDisplay({ route }) {
 
   return (
     <View style={styles.container}>
+      <View style={styles.individualTabs}>
       {individualTabs.map((participant, i) => <IndividualTab key={i} participant={participant.name} items={participant.items} />)}
+      </View>
+      <TouchableOpacity style={styles.restartButton} onPress={() => navigation.navigate("Home")}>
+        <Text style={styles.restartButtonText}>restart</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -34,5 +39,19 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#EEE8AA',
     flex: 1,
+    justifyContent:'flex-end'
+  },
+  individualTabs: {
+    flex: 1
+  },
+  restartButton: {
+    backgroundColor: 'rgb(255,215,0)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 60
+  },
+  restartButtonText: {
+    color: 'rgb(139,69,19)',
+    fontSize: 30
   }
 })

@@ -5,7 +5,7 @@ export default function IndividualTab({ participant, items }) {
     <View>
       <Text>{participant}</Text>
       <ScrollView>
-        {items.map(item => <Text>{item.name} R${item.participantShare}</Text>)}
+        {items.map((item, index) => <Text key={index}>{item.name} R${item.participantShare}</Text>)}
       </ScrollView>
       <Text>Total: R${(items.reduce((acumulator, item) => acumulator + parseFloat(item.participantShare), 0)).toFixed(2)}</Text>
     </View>
