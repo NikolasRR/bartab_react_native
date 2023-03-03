@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 
-import ParticipantForm from "../components/AddParticiapants/ParticipantForm";
-import ParticipantList from "../components/AddParticiapants/ParticipantsList";
+import ParticipantForm from "../components/AddParticiapants/ParticipantFrom/ParticipantForm";
+import ParticipantList from "../components/AddParticiapants/ParticipantList/ParticipantsList";
 
 export default function AddParticipants({ navigation }) {
   const [participants, setParticipants] = useState([]);
