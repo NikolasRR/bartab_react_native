@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import IndividualTab from "../components/TabDisplay/IndividualTab/IndividualTab";
+import TotalTab from "../components/TabDisplay/TotalTab/TotalTab";
 
 export default function TabDisplay({ navigation, route }) {
   const items = route.params.items;
@@ -28,6 +29,7 @@ export default function TabDisplay({ navigation, route }) {
       <View style={styles.individualTabs}>
       {individualTabs.map((participant, i) => <IndividualTab key={i} participant={participant.name} items={participant.items} />)}
       </View>
+      <TotalTab items={items}/>
       <TouchableOpacity style={styles.restartButton} onPress={() => navigation.navigate("Home")}>
         <Text style={styles.restartButtonText}>restart</Text>
       </TouchableOpacity>
