@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   name: {
-    fontSize: 20,
+    fontSize: 19,
     marginTop: 2
   },
   price: {

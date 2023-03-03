@@ -35,7 +35,7 @@ export default function ItemForm({ participants, items, setItems, navigation }) 
   return (
     <View style={styles.container}>
       <View style={styles.inputs}>
-        <TextInput value={name} onChangeText={setName} style={inputStyles(3, 3).input} placeholder="name"></TextInput>
+        <TextInput value={name} onChangeText={setName} style={inputStyles(3, 3).input} placeholder="name" maxLength={26}></TextInput>
         <TextInput value={price} onChangeText={setPrice} style={inputStyles(1, 3).input} placeholder="price" keyboardType="numeric"></TextInput>
         <TextInput value={amount} onChangeText={setAmount} style={inputStyles(1, 3).input} placeholder="amount" keyboardType="numeric"></TextInput>
         <ParticipantSelection participants={participants} selectedParticipants={selectedParticipants} setSelectedParticipants={setSelectedParticipants} />
