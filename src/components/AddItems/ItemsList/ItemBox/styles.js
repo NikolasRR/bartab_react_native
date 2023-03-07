@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingLeft: 5,
     paddingRight: 5,
-    marginBottom: 10
+    marginBottom: 20
   },
   subContainer: {
     width: 300,
