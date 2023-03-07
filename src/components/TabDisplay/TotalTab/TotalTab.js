@@ -7,7 +7,7 @@ export default function TotalTab ({ items }) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>TOTAL:</Text>
-      <Text style={styles.text}>${total}</Text>
+      <Text style={styles.text}>${total.toFixed(2)}</Text>
     </View>
   );
 }

@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
     height: 70,
     backgroundColor: 'rgb(139,69,19)',
     alignItems: "center",
-    justifyContent: 'center'
+    justifyContent: 'center',
+    fontFamily: 'Righteous'
   },
   title: {
     fontSize: 40,

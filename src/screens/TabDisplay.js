@@ -41,10 +41,12 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#EEE8AA',
     flex: 1,
-    justifyContent:'flex-end'
+    justifyContent:'flex-end',
   },
   individualTabs: {
-    flex: 1
+    flex: 1,
+    alignItems: 'center',
+    marginTop: 20
   },
   restartButton: {
     backgroundColor: 'rgb(255,215,0)',

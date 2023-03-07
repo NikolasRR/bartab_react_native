@@ -32,8 +32,5 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     height: 50,
     width: 200,
-    // backgroundColor: 'blue',
-    // borderStyle: 'solid',
-    // borderWidth: 1
   }
 })
