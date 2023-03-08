@@ -1,22 +1,21 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useFonts, Righteous_400Regular } from '@expo-google-fonts/righteous';
+import { useFonts } from 'expo-font';
 
 import Header from './src/components/Header';
 import AddParticipants from './src/screens/AddParticipants';
 import Home from './src/screens/Home';
 import AddItems from './src/screens/AddItems';
 import TabDisplay from './src/screens/TabDisplay';
-import AppLoading from 'expo-app-loading';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [fontsLoaded] = useFonts({ Righteous_400Regular });
+  const [isLoaded] = useFonts({'Righteous': require('./assets/fonts/Righteous-Regular.ttf')})
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
+  if (!isLoaded) {
+    return <View><Text>loading</Text></View>
   }
 
   return (
