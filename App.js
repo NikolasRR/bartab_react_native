@@ -12,7 +12,11 @@ import TabDisplay from './src/screens/TabDisplay';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [isLoaded] = useFonts({'Righteous': require('./assets/fonts/Righteous-Regular.ttf')})
+  const [isLoaded] = useFonts({
+    'Righteous': require('./assets/fonts/Righteous-Regular.ttf'),
+    'Montserrat': require('./assets/fonts/static/Montserrat-SemiBold.ttf'),
+    'Montserrat-medium': require('./assets/fonts/static/Montserrat-Medium.ttf')
+  })
 
   if (!isLoaded) {
     return <View><Text>loading</Text></View>

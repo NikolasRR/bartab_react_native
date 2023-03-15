@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
   },
   addButtonText: {
     color: 'rgb(255,215,0)',
-    fontSize: 25
+    fontSize: 25,
+    fontFamily: 'Montserrat'
   },
   continueButton: {
     height: 60,
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
   continueButtonText: {
     color: 'rgb(139,69,19)',
     fontSize: 25,
-    fontWeight: '600'
+    fontFamily: 'Montserrat'
   }
 })
 
@@ -35,7 +36,9 @@ export const inputStyles = (flex, margin) => StyleSheet.create({
     flex: flex,
     paddingLeft: 5,
     marginRight: margin,
-    height: 60
+    height: 60,
+    fontFamily: 'Montserrat',
+    fontSize: 13
   }
 })
 

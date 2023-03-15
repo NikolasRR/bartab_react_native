@@ -42,18 +42,21 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 19,
-    marginTop: 2
+    marginTop: 2,
+    fontFamily: 'Montserrat'
   },
   price: {
     fontSize: 17,
     color: '#359c35',
     width: 90,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    fontFamily: 'Montserrat'
   },
   amount: {
     fontSize: 17,
     width: 40,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    fontFamily: 'Montserrat'
   }
 })
 

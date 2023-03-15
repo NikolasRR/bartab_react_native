@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   },
   restartButtonText: {
     color: 'rgb(139,69,19)',
-    fontSize: 30
+    fontSize: 30,
+    fontFamily: 'Montserrat'
   }
 })

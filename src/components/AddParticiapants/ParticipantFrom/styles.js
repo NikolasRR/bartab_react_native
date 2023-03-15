@@ -13,7 +13,8 @@ const styles = StyleSheet
     backgroundColor: 'white',
     height: 60,
     flex: 2,
-    paddingLeft: 10
+    paddingLeft: 10,
+    fontFamily: 'Montserrat'
   },
   addButton: {
     flex: 1,
@@ -23,7 +24,8 @@ const styles = StyleSheet
   },
   addButtonText: {
     color: 'rgb(255,215,0)',
-    fontSize: 25
+    fontSize: 25,
+    fontFamily: 'Montserrat'
   },
   continueButton: {
     height: 60,
@@ -34,7 +36,7 @@ const styles = StyleSheet
   continueButtonText: {
     color: 'rgb(139,69,19)',
     fontSize: 25,
-    fontWeight: '600'
+    fontFamily: 'Montserrat'
   }
 })
 

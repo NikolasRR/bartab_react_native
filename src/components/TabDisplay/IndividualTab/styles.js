@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    width: 300,
+    width: 325,
     height: 50,
     borderRadius: 10,
     backgroundColor: '#d2691e',
@@ -12,14 +12,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 10
   },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 })
 
 export const resumeText = (align) => StyleSheet.create({
   text: {
     color: '#ffd700',
     fontSize: 20,
-    width: 125,
+    width: 127,
     textAlign: align,
+    fontFamily: 'Montserrat'
   }
 })
 
