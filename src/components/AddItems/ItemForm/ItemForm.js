@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 
-import ParticipantSelection from "../ParticipantSelection";
+import ParticipantSelection from "../ParticipantSelection/ParticipantSelection";
 import styles, { inputStyles } from "./styles";
 
 export default function ItemForm({ participants, items, setItems, navigation }) {

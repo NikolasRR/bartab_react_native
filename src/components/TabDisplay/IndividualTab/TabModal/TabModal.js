@@ -14,7 +14,8 @@ export default function TabModal({ partipantName, participantTotal, items }) {
               <View style={styles.itemBox}>
                 <Text style={styles.item} numberOfLines={1}>{item.name}</Text>
                 <Text style={styles.item}>${item.participantShare}</Text>
-              </View>}
+              </View>
+            }
           />
         </View>
         <Text style={styles.total}>TOTAL: ${participantTotal}</Text>

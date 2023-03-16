@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { StyleSheet, Switch, Text, View } from "react-native";
+import { Switch, Text, View } from "react-native";
+import styles from "./styles";
 
 export default function ParticipantSwitch({ state, name, index, selectedParticipants, setSelectedParticipants }) {
   const [selected, setSelected] = useState(state);
@@ -12,8 +13,8 @@ export default function ParticipantSwitch({ state, name, index, selectedParticip
 
   return (
     <View style={styles.container}>
-      <Text>{name}</Text>
-      <Switch 
+      <Text style={styles.name}>{name}</Text>
+      <Switch trackColor={{true: "#ffd700", }} thumbColor={'#8b4513'}
       onChange={() => {
         if (!selected) setSelectedParticipants([...selectedParticipants, name]);
         if (selected) updateParticipants(index);
@@ -24,13 +25,3 @@ export default function ParticipantSwitch({ state, name, index, selectedParticip
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    height: 50,
-    width: 200,
-  }
-})
