@@ -8,10 +8,10 @@ export default function Home({ navigation }) {
         <Text style={textStyles(17, 'Montserrat-medium').welcome}>the app to split the bar tab with your friends</Text>
       </View>
       <View style={styles.textBox}>
-        <Text style={textStyles(20, 'Montserrat').welcome}>Here's how it works:</Text>
+        <Text style={textStyles(24.5, 'Montserrat').welcome}>Here's how it works:</Text>
         <Text style={textStyles(16, 'Montserrat-medium').welcome}>first, add the participants</Text>
         <Text style={textStyles(16, 'Montserrat-medium').welcome}>then, add the items, informing the ones that participated in it</Text>
-      <Text style={textStyles(16, 'Montserrat-medium').welcome}>and that's it! the indivual check of every participant will be calculated, as well as the total</Text>
+      <Text style={textStyles(16, 'Montserrat-medium').welcome}>and that's it! the indivual check of every participant will be calculated, as well as the total tab</Text>
       </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("AddParticipants")}>
         <Text style={styles.buttonText}>start</Text>
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   textBox: {
-    marginTop: 30
+    marginTop: 50
   },
   button: {
     backgroundColor: '#ffd700',
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,
-    marginTop: 60
+    marginTop: 50
   },
   buttonText: {
     color: '#8b4513',
