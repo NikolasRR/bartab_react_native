@@ -12,13 +12,13 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 24,
     height: 70,
-    backgroundColor: 'rgb(139,69,19)',
+    backgroundColor: '#8b4513',
     alignItems: "center",
     justifyContent: 'center',
   },
   title: {
     fontSize: 40,
     fontFamily: 'Righteous',
-    color: 'rgb(255,215,0)'
+    color: '#ffd700'
   }
 })
