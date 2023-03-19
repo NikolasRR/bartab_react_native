@@ -7,11 +7,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   modalView: {
-    height: 250,
-    width: 200,
-    backgroundColor: '#E0EAF4',
+    height: 300,
+    width: 250,
+    backgroundColor: '#F5F5DC',
     borderRadius: 20,
-    paddingTop: 35,
+    paddingVertical: 20,
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: {
@@ -21,6 +21,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
+  },
+  flatList: {
+    width: 200,
+    alignItems: 'center'
+  },
+  modalParticipant: {
+    fontFamily: 'Montserrat-medium',
+    marginTop: 10,
+    fontSize: 15,
   },
   participantContainer: {
     alignItems: 'center',
@@ -32,7 +41,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingLeft: 5,
     paddingRight: 5,
-    marginBottom: 20
+    marginBottom: 20,
+    backgroundColor: '#fff09f'
   },
   subContainer: {
     width: 300,

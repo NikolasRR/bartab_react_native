@@ -16,17 +16,6 @@ const styles = StyleSheet.create({
     color: 'rgb(255,215,0)',
     fontSize: 25,
     fontFamily: 'Montserrat'
-  },
-  continueButton: {
-    height: 60,
-    backgroundColor: 'rgb(255,215,0)',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  continueButtonText: {
-    color: 'rgb(139,69,19)',
-    fontSize: 25,
-    fontFamily: 'Montserrat'
   }
 })
 
@@ -39,6 +28,23 @@ export const inputStyles = (flex, margin) => StyleSheet.create({
     height: 60,
     fontFamily: 'Montserrat',
     fontSize: 13
+  }
+})
+
+export const continueButton = (backgroundColor) => StyleSheet.create({
+  style: {
+    height: 60,
+    backgroundColor: backgroundColor,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+})
+
+export const continueButtonText = (color) => StyleSheet.create({
+  style: {
+    color: color,
+    fontSize: 25,
+    fontFamily: 'Montserrat',
   }
 })
 
