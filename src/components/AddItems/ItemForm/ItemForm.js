@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 
-import ParticipantSelection from "../ParticipantSelection/ParticipantSelection";
+import ParticipantSelection from "./ParticipantSelection/ParticipantSelection";
 import styles, { continueButton, continueButtonText, inputStyles } from "./styles";
 
 export default function ItemForm({ participants, items, setItems, navigation }) {
@@ -40,10 +40,10 @@ export default function ItemForm({ participants, items, setItems, navigation }) 
         <TextInput value={amount} onChangeText={setAmount} style={inputStyles(1, 3).input} placeholder="amount" keyboardType="numeric"></TextInput>
         <ParticipantSelection participants={participants} selectedParticipants={selectedParticipants} setSelectedParticipants={setSelectedParticipants} />
       </View>
-      <TouchableOpacity style={styles.addButton} onPress={() => addItem()}>
+      <TouchableOpacity style={styles.addButton} onPress={() => addItem()} activeOpacity={1}>
         <Text style={styles.addButtonText}>add</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={continueButton(items.length === 0 ? '#959595' : '#ffd700').style} onPress={() => navigation.navigate("TabDisplay", { items: items })}>
+      <TouchableOpacity style={continueButton(items.length === 0 ? '#959595' : '#ffd700').style} onPress={() => navigation.navigate("TabDisplay", { items: items })} activeOpacity={1}>
         <Text style={continueButtonText(items.length === 0 ? '#d0d0d0' : '#8b4513').style}>continue</Text>
       </TouchableOpacity>
     </View>

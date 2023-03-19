@@ -34,8 +34,6 @@ const styles = StyleSheet.create({
   participantContainer: {
     alignItems: 'center',
     borderRadius: 5,
-    borderWidth: 1,
-    borderColor: 'gray',
     width: 300,
     height: 65,
     justifyContent: "space-between",

@@ -27,7 +27,7 @@ export default function ParticipantForm({ participants, setParticipants, navigat
           maxLength={20}
           placeholder="participant name"
         ></TextInput>
-        <TouchableOpacity disabled={participantName.length < 2} style={styles.addButton} onPress={() => addParticipant()} >
+        <TouchableOpacity disabled={participantName.length < 2} style={styles.addButton} onPress={() => addParticipant()} activeOpacity={1}>
           <Text style={styles.addButtonText}>add</Text>
         </TouchableOpacity>
       </View>
@@ -35,6 +35,7 @@ export default function ParticipantForm({ participants, setParticipants, navigat
         disabled={enoughParticipants}
         style={continueButton(enoughParticipants ? '#959595' : '#ffd700').style}
         onPress={() => navigation.navigate("AddItems", { participants: participants })}
+        activeOpacity={1}
       >
         <Text style={continueButtonText(enoughParticipants ? '#d0d0d0' : '#8b4513').style}>continue</Text>
       </TouchableOpacity>

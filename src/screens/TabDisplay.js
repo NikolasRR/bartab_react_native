@@ -30,7 +30,7 @@ export default function TabDisplay({ navigation, route }) {
       {individualTabs.map((participant, i) => <IndividualTab key={i} participant={participant.name} items={participant.items} />)}
       </View>
       <TotalTab items={items}/>
-      <TouchableOpacity style={styles.restartButton} onPress={() => navigation.navigate("Home")}>
+      <TouchableOpacity style={styles.restartButton} onPress={() => navigation.navigate("Home")} activeOpacity={1}>
         <Text style={styles.restartButtonText}>restart</Text>
       </TouchableOpacity>
     </View>

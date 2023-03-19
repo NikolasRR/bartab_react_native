@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderRadius: 5,
-    borderWidth: 1,
     width: 300,
     height: 40,
     justifyContent: "space-between",
