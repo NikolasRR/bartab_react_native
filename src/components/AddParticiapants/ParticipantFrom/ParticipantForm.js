@@ -9,7 +9,7 @@ export default function ParticipantForm({ participants, setParticipants, navigat
 
   const addParticipant = () => {
     if (participants.find(p => p === participantName)) {
-      Alert.alert('repeated names not allowed');
+      Alert.alert('repeated names are not allowed');
       return;
     }
 

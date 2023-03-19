@@ -11,15 +11,17 @@ export default function ParticipantList({ participants, setParticipants }) {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      {participants.map((participant, i) => {
-        return (
-        <View style={styles.participantContainer} key={i}>
-          <Text style={styles.text}>{participant}</Text>
-          <Ionicons name="close" size={30} color="red" onPress={() => updateParticipants(i)} />
-        </View>
-        );
-      })}
-    </ScrollView>
+    <View style={styles.container}>
+      <ScrollView>
+        {participants.map((participant, i) => {
+          return (
+            <View style={styles.participantContainer} key={i}>
+              <Text style={styles.text}>{participant}</Text>
+              <Ionicons name="close" size={30} color="red" onPress={() => updateParticipants(i)} />
+            </View>
+          );
+        })}
+      </ScrollView>
+    </View>
   );
 }

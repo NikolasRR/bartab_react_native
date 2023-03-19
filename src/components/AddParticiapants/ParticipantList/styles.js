@@ -2,8 +2,9 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
+    marginVertical: 20,
     alignItems: 'center',
+    flex: 1
   },
   participantContainer: {
     flexDirection: 'row',
@@ -15,7 +16,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingLeft: 5,
     paddingRight: 5,
-    marginBottom: 20
+    marginBottom: 20,
+    backgroundColor: '#fff09f'
   },
   text: {
     fontSize: 20,
