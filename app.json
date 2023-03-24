@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "bartab_react_native",
-    "slug": "bartab_react_native",
+    "name": "bartab",
+    "slug": "bartab",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,7 +25,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.nelsonthedev.bartab_react_native"
+      "package": "com.nelsonthedev.bartab"
     },
     "web": {
       "favicon": "./assets/favicon.png"

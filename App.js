@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <StatusBar translucent={true}/>
+      <StatusBar translucent={true} backgroundColor={'black'}/>
       <Header />
       <Stack.Navigator>
         <Stack.Screen
