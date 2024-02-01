@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View, ScrollView } from "react-native";
 import IndividualTab from "../components/TabDisplay/IndividualTab/IndividualTab";
 import TotalTab from "../components/TabDisplay/TotalTab/TotalTab";
 
@@ -22,14 +22,14 @@ export default function TabDisplay({ navigation, route }) {
   });
 
   let individualTabs = [];
-  tabs.forEach((value, key) => individualTabs.push({name: key, items: value}))
+  tabs.forEach((value, key) => individualTabs.push({ name: key, items: value }))
 
   return (
     <View style={styles.container}>
-      <View style={styles.individualTabs}>
-      {individualTabs.map((participant, i) => <IndividualTab key={i} participant={participant.name} items={participant.items} />)}
-      </View>
-      <TotalTab items={items}/>
+      <ScrollView contentContainerStyle={styles.individualTabs}>
+        {individualTabs.map((participant, i) => <IndividualTab key={i} participant={participant.name} items={participant.items} />)}
+      </ScrollView>
+      <TotalTab items={items} />
       <TouchableOpacity style={styles.restartButton} onPress={() => navigation.navigate("Home")} activeOpacity={1}>
         <Text style={styles.restartButtonText}>restart</Text>
       </TouchableOpacity>
@@ -41,12 +41,10 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#EEE8AA',
     flex: 1,
-    justifyContent:'flex-end',
   },
   individualTabs: {
-    flex: 1,
     alignItems: 'center',
-    marginTop: 20
+    marginVertical: 10
   },
   restartButton: {
     backgroundColor: 'rgb(255,215,0)',
