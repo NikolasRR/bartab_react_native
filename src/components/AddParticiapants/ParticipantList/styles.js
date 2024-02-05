@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+import { width, height } from "../../../support/Dimensions";
 
 const styles = StyleSheet.create({
   container: {
@@ -10,8 +11,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderRadius: 5,
-    width: 300,
-    height: 40,
+    width: width * 0.8,
+    height: height * 0.07,
     justifyContent: "space-between",
     paddingLeft: 5,
     paddingRight: 5,
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff09f'
   },
   text: {
-    fontSize: 20,
+    fontSize: height * 0.025,
     fontFamily: 'Montserrat'
   }
 })
