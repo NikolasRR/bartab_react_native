@@ -1,7 +1,7 @@
 import { ScrollView, Text, View } from "react-native";
-
 import { Ionicons } from '@expo/vector-icons';
 import styles from "./styles";
+import { height } from "../../../support/Dimensions";
 
 export default function ParticipantList({ participants, setParticipants }) {
   const updateParticipants = (index) => {
@@ -17,7 +17,7 @@ export default function ParticipantList({ participants, setParticipants }) {
           return (
             <View style={styles.participantContainer} key={i}>
               <Text style={styles.text}>{participant}</Text>
-              <Ionicons name="close" size={30} color="red" onPress={() => updateParticipants(i)} />
+              <Ionicons name="close" size={height * 0.035} color="red" onPress={() => updateParticipants(i)} />
             </View>
           );
         })}
