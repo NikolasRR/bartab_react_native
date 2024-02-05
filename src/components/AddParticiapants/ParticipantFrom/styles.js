@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
+import { height } from "../../../support/Dimensions";
 
 const styles = StyleSheet
   .create({
     container: {
-      height: 120,
+      height: height * 0.15,
       backgroundColor: 'blue'
     },
     inputDiv: {
@@ -11,10 +12,11 @@ const styles = StyleSheet
     },
     input: {
       backgroundColor: 'white',
-      height: 60,
+      height: height * 0.075,
       flex: 2,
       paddingLeft: 10,
-      fontFamily: 'Montserrat'
+      fontFamily: 'Montserrat',
+      fontSize: height * 0.02
     },
     addButton: {
       flex: 1,
@@ -24,14 +26,14 @@ const styles = StyleSheet
     },
     addButtonText: {
       color: '#ffd700',
-      fontSize: 25,
+      fontSize: height * 0.03,
       fontFamily: 'Montserrat'
     },
   })
 
 export const continueButton = (backgroundColor) => StyleSheet.create({
   style: {
-    height: 60,
+    height: height * 0.075,
     backgroundColor: backgroundColor,
     alignItems: 'center',
     justifyContent: 'center'
@@ -41,7 +43,7 @@ export const continueButton = (backgroundColor) => StyleSheet.create({
 export const continueButtonText = (color) => StyleSheet.create({
   style: {
     color: color,
-    fontSize: 25,
+    fontSize: height * 0.03,
     fontFamily: 'Montserrat',
   }
 })
