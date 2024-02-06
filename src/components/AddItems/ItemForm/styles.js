@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native"
+import { height } from "../../../support/Dimensions";
 
 const styles = StyleSheet.create({
   container: {
@@ -10,7 +11,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(139,69,19)',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 60
+    height: height * 0.075
   },
   addButtonText: {
     color: 'rgb(255,215,0)',
@@ -25,15 +26,15 @@ export const inputStyles = (flex, margin) => StyleSheet.create({
     flex: flex,
     paddingLeft: 5,
     marginRight: margin,
-    height: 60,
+    height: height * 0.075,
     fontFamily: 'Montserrat',
-    fontSize: 13
+    fontSize: height * 0.017
   }
 })
 
 export const continueButton = (backgroundColor) => StyleSheet.create({
   style: {
-    height: 60,
+    height: height * 0.075,
     backgroundColor: backgroundColor,
     alignItems: 'center',
     justifyContent: 'center'
