@@ -14,7 +14,7 @@ export default function ParticipantSwitch({ state, name, index, selectedParticip
   return (
     <View style={styles.container}>
       <Text style={styles.name}>{name}</Text>
-      <Switch trackColor={{true: "#ffd700", }} thumbColor={'#8b4513'}
+      <Switch trackColor={{true: "#ffd700", }} thumbColor={'#8b4513'} style={styles.switch}
       onChange={() => {
         if (!selected) setSelectedParticipants([...selectedParticipants, name]);
         if (selected) updateParticipants(index);
