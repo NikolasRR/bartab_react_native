@@ -1,15 +1,15 @@
 import { StyleSheet } from "react-native";
+import { height, width } from "../../../../support/Dimensions";
 
 const styles = StyleSheet.create({
   mainContainer: {
-    height: 40,
     flex: 1
   },
   openModalButton: {
     backgroundColor: '#D2691E',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 60
+    height: height * 0.075
   },
   openModalButtonText: {
     color: '#EEE8AA',
@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   modalView: {
-    height: 550,
-    width: 250,
+    height: height * 0.5,
+    width: width * 0.7,
     marginTop: 40,
     backgroundColor: '#F5F5DC',
     borderRadius: 20,
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end'
   },
   instructionText: {
-    fontSize: 16,
+    fontSize: height * 0.019,
     marginBottom: 10,
     fontFamily: 'Montserrat'
   },
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   doneButtonText: {
-    fontSize: 20,
+    fontSize: height * 0.023,
     color: 'white'
   }
 })

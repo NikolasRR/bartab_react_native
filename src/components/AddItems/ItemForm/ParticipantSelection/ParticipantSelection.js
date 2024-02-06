@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import ParticipantSwitch from "./ParticipnatSwitch/ParticipantSwitch";
 import styles from "./styles";
+import { height } from "../../../../support/Dimensions";
 
 export default function ParticipantSelection({ participants, selectedParticipants, setSelectedParticipants }) {
   const [modelOpen, setModelOpen] = useState(false);
@@ -11,7 +12,7 @@ export default function ParticipantSelection({ participants, selectedParticipant
   return (
     <View style={styles.mainContainer}>
       <TouchableOpacity style={styles.openModalButton} onPress={() => setModelOpen(true)}>
-        <Ionicons name={selectedParticipants.length === 0 ? "people-sharp" : "ios-checkmark-sharp"} size={24} color="rgb(255,215,0)" />
+        <Ionicons name={selectedParticipants.length === 0 ? "people-sharp" : "ios-checkmark-sharp"} size={height * 0.035} color="rgb(255,215,0)" />
       </TouchableOpacity>
       <Modal
         animationType="slide"
