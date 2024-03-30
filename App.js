@@ -3,9 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
 
-import Header from './src/components/Header';
+import Header from './src/components/Header/Header';
 import AddParticipants from './src/screens/AddParticipants';
-import Home from './src/screens/Home';
+import Home from './src/screens/Home/Home';
 import AddItems from './src/screens/AddItems';
 import TabDisplay from './src/screens/TabDisplay';
 
