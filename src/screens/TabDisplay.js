@@ -1,6 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View, ScrollView } from "react-native";
 import IndividualTab from "../components/TabDisplay/IndividualTab/IndividualTab";
 import TotalTab from "../components/TabDisplay/TotalTab/TotalTab";
+import { height } from '../support/Dimensions';
 
 export default function TabDisplay({ navigation, route }) {
   const items = route.params.items;
@@ -50,11 +51,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(255,215,0)',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 60
+    height: height * 0.075
   },
   restartButtonText: {
     color: 'rgb(139,69,19)',
-    fontSize: 30,
+    fontSize: height * 0.035,
     fontFamily: 'Montserrat'
   }
 })

@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
+import { height, width } from '../../../support/Dimensions';
 
 const styles = StyleSheet.create({
   container: {
-    width: 325,
-    height: 50,
+    width: width * 0.8,
+    height: height * 0.07,
     borderRadius: 10,
     backgroundColor: '#d2691e',
     flexDirection: 'row',
@@ -22,10 +23,10 @@ const styles = StyleSheet.create({
 export const resumeText = (align) => StyleSheet.create({
   text: {
     color: '#ffd700',
-    fontSize: 20,
-    width: 127,
+    fontSize: height * 0.022,
+    width: width * 0.3,
     textAlign: align,
-    fontFamily: 'Montserrat'
+    fontFamily: 'Montserrat',
   }
 })
 

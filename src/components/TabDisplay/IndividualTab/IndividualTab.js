@@ -7,6 +7,7 @@ import Modal from "react-native-modal";
 import { Ionicons } from '@expo/vector-icons';
 
 import TabModal from "./TabModal/TabModal";
+import { height } from '../../../support/Dimensions';
 
 export default function IndividualTab({ participant, items }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function IndividualTab({ participant, items }) {
   return (
     <View style={styles.container}>
       <Text numberOfLines={1} style={resumeText('left').text}>{participant}</Text>
-      <Ionicons name="receipt" size={24} color="#ffd700" onPress={() => setModalIsOpen(true)} />
+      <Ionicons name="receipt" size={height * 0.03} color="#ffd700" onPress={() => setModalIsOpen(true)} />
       <Text style={resumeText('right').text}>${total}</Text>
       <Modal
         isVisible={modalIsOpen}

@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { height, width } from '../../../../support/Dimensions';
 
 const styles = StyleSheet.create({
   modalContainer: {
@@ -7,8 +8,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   modalView: {
-    height: 450,
-    width: 250,
+    height: height * 0.5,
+    width: width * 0.65,
     marginTop: 40,
     backgroundColor: '#F5F5DC',
     borderRadius: 20,
@@ -25,26 +26,26 @@ const styles = StyleSheet.create({
   },
   participant: {
     fontFamily: 'Montserrat',
-    fontSize: 20,
+    fontSize: height * 0.022,
     marginBottom: 10,
   },
   itemsList: {
-    height: 335,
-    marginBottom: 15
+    height: height * 0.38,
+    marginBottom: 15,
   },
   itemBox: {
     marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: 210
+    width: width * 0.5
   },
   item: {
     fontFamily: 'Montserrat-medium',
-    fontSize: 15
+    fontSize: height * 0.018,
   },
   total: {
     fontFamily: 'Montserrat',
-    fontSize: 20
+    fontSize: height * 0.022,
   }
 })
 
