@@ -8,6 +8,8 @@ import AddParticipants from './src/screens/AddParticipants';
 import Home from './src/screens/Home/Home';
 import AddItems from './src/screens/AddItems';
 import TabDisplay from './src/screens/TabDisplay';
+import { ParticipantsProvider } from './src/contexts/participantContext';
+import { ItemsProvider } from './src/contexts/itemsContext';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,33 +25,36 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <StatusBar translucent={true} backgroundColor={'black'}/>
-      <Header />
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="AddParticipants"
-          component={AddParticipants}
-          options={{ headerShown: false }}
-
-        />
-        <Stack.Screen
-          name="AddItems"
-          component={AddItems}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="TabDisplay"
-          component={TabDisplay}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ItemsProvider>
+      <ParticipantsProvider>
+        <NavigationContainer>
+          <StatusBar translucent={true} backgroundColor={'black'} />
+          <Header />
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Home"
+              component={Home}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="AddParticipants"
+              component={AddParticipants}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="AddItems"
+              component={AddItems}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="TabDisplay"
+              component={TabDisplay}
+              options={{ headerShown: false }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ParticipantsProvider>
+    </ItemsProvider>
   );
 }
 
