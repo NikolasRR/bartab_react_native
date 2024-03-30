@@ -1,11 +1,14 @@
 import { StyleSheet, Text, TouchableOpacity, View, ScrollView } from "react-native";
+
 import IndividualTab from "../components/TabDisplay/IndividualTab/IndividualTab";
 import TotalTab from "../components/TabDisplay/TotalTab/TotalTab";
 import { height } from '../support/Dimensions';
 import { useItems } from '../contexts/itemsContext';
+import { useParticipants } from '../contexts/participantContext';
 
 export default function TabDisplay({ navigation }) {
-  const { items } = useItems();
+  const { items, setItems } = useItems();
+  const { setParticipants } = useParticipants();
 
   let tabs = new Map;
   items.forEach(item => {
@@ -27,13 +30,19 @@ export default function TabDisplay({ navigation }) {
   let individualTabs = [];
   tabs.forEach((value, key) => individualTabs.push({ name: key, items: value }))
 
+  const restart = () => {
+    navigation.navigate("Home");
+    setParticipants([]);
+    setItems([]);
+  }
+
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.individualTabs}>
         {individualTabs.map((participant, i) => <IndividualTab key={i} participant={participant.name} items={participant.items} />)}
       </ScrollView>
       <TotalTab items={items} />
-      <TouchableOpacity style={styles.restartButton} onPress={() => navigation.navigate("Home")} activeOpacity={1}>
+      <TouchableOpacity style={styles.restartButton} onPress={() => restart()} activeOpacity={1}>
         <Text style={styles.restartButtonText}>restart</Text>
       </TouchableOpacity>
     </View>
