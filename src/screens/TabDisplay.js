@@ -2,9 +2,11 @@ import { StyleSheet, Text, TouchableOpacity, View, ScrollView } from "react-nati
 import IndividualTab from "../components/TabDisplay/IndividualTab/IndividualTab";
 import TotalTab from "../components/TabDisplay/TotalTab/TotalTab";
 import { height } from '../support/Dimensions';
+import { useItems } from '../contexts/itemsContext';
 
-export default function TabDisplay({ navigation, route }) {
-  const items = route.params.items;
+export default function TabDisplay({ navigation }) {
+  const { items } = useItems();
+
   let tabs = new Map;
   items.forEach(item => {
     const itemBrief = {
