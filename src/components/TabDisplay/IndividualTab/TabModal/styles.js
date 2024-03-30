@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   itemsList: {
-    height: height * 0.38,
+    height: height * 0.35,
     marginBottom: 15,
   },
   itemBox: {
