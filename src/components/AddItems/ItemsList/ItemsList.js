@@ -2,8 +2,10 @@ import { ScrollView, Text, View } from "react-native";
 
 import styles from "./styles";
 import ItemBox from "./ItemBox/ItemBox";
+import { useItems } from '../../../contexts/itemsContext';
 
-export default function ItemList({ items, setItems }) {
+export default function ItemList() {
+  const { items, setItems } = useItems();
 
   const updateItems = (index) => {
     let temp = [...items];
