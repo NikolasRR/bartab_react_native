@@ -3,6 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useState } from "react";
 import styles from "./styles";
 import Modal from "react-native-modal";
+import { height } from '../../../../support/Dimensions';
 
 export default function ItemBox({ item, i, updateItems }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -17,7 +18,7 @@ export default function ItemBox({ item, i, updateItems }) {
       >
         <View style={styles.modalContainer}>
           <View style={styles.modalView}>
-            <Text style={styles.name}><Ionicons name="people-sharp" size={24} color="#D2691E" /> {item.name}</Text>
+            <Text style={styles.name}><Ionicons name="people-sharp" size={height * 0.03} color="#D2691E" /> {item.name}</Text>
             <FlatList
               style={{ marginTop: 15 }}
               contentContainerStyle={styles.flatList}
@@ -31,8 +32,8 @@ export default function ItemBox({ item, i, updateItems }) {
       <View style={styles.subContainer}>
         <Text style={styles.amount}>{item.amount}x</Text>
         <Text style={styles.price}>R${item.price}</Text>
-        <Ionicons name="people-sharp" size={24} color="#D2691E" onPress={() => setModalIsOpen(true)} />
-        <Ionicons name="close" size={30} color="red" onPress={() => updateItems(i)} />
+        <Ionicons name="people-sharp" size={height * 0.03} color="#D2691E" onPress={() => setModalIsOpen(true)} />
+        <Ionicons name="close" size={height * 0.035} color="red" onPress={() => updateItems(i)} />
       </View>
     </View>
   );

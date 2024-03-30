@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { height, width } from '../../../../support/Dimensions';
 
 const styles = StyleSheet.create({
   modalContainer: {
@@ -7,8 +8,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   modalView: {
-    height: 300,
-    width: 250,
+    height: height * 0.4,
+    width: width * 0.6,
     backgroundColor: '#F5F5DC',
     borderRadius: 20,
     paddingVertical: 20,
@@ -23,19 +24,19 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   flatList: {
-    width: 200,
+    width: width * 0.5,
     alignItems: 'center'
   },
   modalParticipant: {
     fontFamily: 'Montserrat-medium',
     marginTop: 10,
-    fontSize: 15,
+    fontSize: height * 0.02,
   },
   participantContainer: {
     alignItems: 'center',
     borderRadius: 5,
-    width: 300,
-    height: 65,
+    width: width * 0.8,
+    height: height * 0.09,
     justifyContent: "space-between",
     paddingLeft: 5,
     paddingRight: 5,
@@ -43,25 +44,26 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff09f'
   },
   subContainer: {
-    width: 300,
+    width: width * 0.8,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: "space-around",
   },
   name: {
-    fontSize: 19,
+    fontSize: height * 0.025,
     marginTop: 2,
-    fontFamily: 'Montserrat'
+    fontFamily: 'Montserrat',
+    textAlign: 'center'
   },
   price: {
-    fontSize: 17,
+    fontSize: height * 0.021,
     color: '#359c35',
     width: 90,
     justifyContent: 'center',
     fontFamily: 'Montserrat'
   },
   amount: {
-    fontSize: 17,
+    fontSize: height * 0.021,
     width: 40,
     justifyContent: 'center',
     fontFamily: 'Montserrat'

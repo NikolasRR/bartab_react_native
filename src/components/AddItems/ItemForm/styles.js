@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
   addButtonText: {
     color: 'rgb(255,215,0)',
-    fontSize: 25,
+    fontSize: height * 0.028,
     fontFamily: 'Montserrat'
   }
 })
@@ -44,7 +44,7 @@ export const continueButton = (backgroundColor) => StyleSheet.create({
 export const continueButtonText = (color) => StyleSheet.create({
   style: {
     color: color,
-    fontSize: 25,
+    fontSize: height * 0.028,
     fontFamily: 'Montserrat',
   }
 })
