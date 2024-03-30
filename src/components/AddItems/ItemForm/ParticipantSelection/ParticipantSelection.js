@@ -5,8 +5,11 @@ import { Ionicons } from '@expo/vector-icons';
 import ParticipantSwitch from "./ParticipnatSwitch/ParticipantSwitch";
 import styles from "./styles";
 import { height } from "../../../../support/Dimensions";
+import { useParticipants } from '../../../../contexts/participantContext';
 
-export default function ParticipantSelection({ participants, selectedParticipants, setSelectedParticipants }) {
+export default function ParticipantSelection({ selectedParticipants, setSelectedParticipants }) {
+  const { participants } = useParticipants();
+
   const [modelOpen, setModelOpen] = useState(false);
 
   return (
