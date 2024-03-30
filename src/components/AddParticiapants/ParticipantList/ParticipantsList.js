@@ -2,8 +2,11 @@ import { ScrollView, Text, View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import styles from "./styles";
 import { height } from "../../../support/Dimensions";
+import { useParticipants } from '../../../contexts/participantContext';
 
-export default function ParticipantList({ participants, setParticipants }) {
+export default function ParticipantList() {
+  const { participants, setParticipants } = useParticipants();
+
   const updateParticipants = (index) => {
     let temp = [...participants];
     temp.splice(index, 1);
